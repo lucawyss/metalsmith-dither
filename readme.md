@@ -2,6 +2,8 @@
 
 A [Metalsmith](https://github.com/metalsmith/metalsmith) plugin to dither images, based on [DitherJS](https://github.com/dpiccone/ditherjs).
 
+The script take the image matching the `pattern` and make a *dithered* copy of the file, with a `suffix` added at the basename. The dithering effects can use of '*atkinson*' ou '*ordered*' `algorithm`. A color `palette` can be applied to the image. By default, the palette is black & white. The last parameter is the `step` for the pixel quantization ... in short the size of the pixel.
+
 The script is dependent of [Jimp](https://github.com/oliver-moran/jimp) library.
 
 ## Install
