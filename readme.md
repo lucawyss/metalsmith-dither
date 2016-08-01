@@ -33,11 +33,6 @@ var defaultOptions = {
 };
 ```
 
-### Todo
-
-- need algorithm parameter
-- need cleaning code
-
 ### Credits
 
 The script is a fork of [DitherJS](https://github.com/dpiccone/ditherjs) by [Daniele Piccone](http://www.danielepiccone.com)
