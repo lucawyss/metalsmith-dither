@@ -3,22 +3,24 @@ var Jimp = require('jimp');
 
 var file = 'test/thumb.png';
 
-Jimp.read(file, function(err, image) {
-  var defaultDither, newData;
-  if (err != null) {
-    throw err;
+
+
+var palette = [];
+palette.push([0, 0, 0, 255]);
+palette.push([233,93,16, 255]);
+palette.push([22,162,240, 255]);
+
+var findColor = function(rgba) {
+  var bestColor, bestDelta, c, delta, k, len;
+  bestDelta = Infinity;
+  bestColor = null;
+  for (k = 0, len = palette.length; k < len; k++) {
+    c = palette[k];
+    delta = Math.sqrt(Math.pow(c[0] - rgba[0], 2) + Math.pow(c[1] - rgba[1], 2) + Math.pow(c[2] - rgba[2], 2));
+    if (delta < bestDelta) {
+      bestDelta = delta;
+      bestColor = c;
+    }
   }
-  defaultDither = new ImageDither;
-  newData = defaultDither.dither(image.bitmap.data, image.bitmap.width);
-  return new Jimp(image.bitmap.width, image.bitmap.height, function(err, newImage) {
-    var i, j, ref;
-    if (err != null) {
-      throw err;
-    }
-    for (i = j = 0, ref = newData.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
-      newImage.bitmap.data[i] = newData[i];
-    }
-    newImage.write('default.png');
-    return console.log('wrote default.png');
-  });
-});
+  return bestColor;
+};
