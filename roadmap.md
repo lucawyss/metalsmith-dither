@@ -3,4 +3,4 @@
 - [ ] improve documentation
 - [ ] add to metalsmith plugin list
 - [ ] unit testing
-- [ ] add algorithm parameter
+- [x] add algorithm parameter
