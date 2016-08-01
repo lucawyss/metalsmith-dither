@@ -2,6 +2,8 @@
 
 A [Metalsmith](https://github.com/metalsmith/metalsmith) plugin to dither images, based on [DitherJS](https://github.com/dpiccone/ditherjs).
 
+The script is dependent of [Jimp](https://github.com/oliver-moran/jimp) library.
+
 ## Install
 
 ```sh
