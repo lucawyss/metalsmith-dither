@@ -37,6 +37,6 @@ var metalsmith = new Metalsmith(__dirname)
 
 ### Credits
 
-The script is a fork of [DitherJS](https://github.com/dpiccone/ditherjs) by [Daniele Piccone](http://www.danielepiccone.com)
+The script is a fork of [DitherJS](https://github.com/dpiccone/ditherjs) by [Daniele Piccone](http://www.danielepiccone.com) adapted into the node context.
 
 license MIT
