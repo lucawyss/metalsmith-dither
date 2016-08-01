@@ -5,7 +5,7 @@ A [Metalsmith](https://github.com/metalsmith/metalsmith) plugin to dither images
 ## Install
 
 ```sh
-npm install --save git+https://git@github.com:lucawyss/metalsmith-dither.git
+npm install --save metalsmith-dither
 ```
 
 ## usage
