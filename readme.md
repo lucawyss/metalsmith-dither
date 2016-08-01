@@ -23,7 +23,7 @@ var metalsmith = new Metalsmith(__dirname)
   .build();
 ```
 
-## Api
+## Options
 
 ```javascript
 var defaultOptions = {
