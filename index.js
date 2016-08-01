@@ -1,16 +1,11 @@
 'use strict';
 
 // var debug = require('debug')('metalsmith-dither');
-// var ImageDither = require('image-dither');
-// var DitherJS = require('ditherjs');
-// var nodeDither = require('node-dithering');
 var Jimp = require('jimp');
-
 var path = require('path');
 var fs = require("fs");
 var matcher = require('minimatch');
 var _ = require('lodash');
-
 
 
 module.exports = dither;
@@ -29,23 +24,22 @@ function dither(options){
       _.each(matchingFiles, function(file) {
 
         // construction path and file name
-        var imagePathsrc, imagePathdir, imagePathext, imagePathbasename, imagePathabs, imagePathdest;
-        imagePathsrc = file;
-        imagePathdir = file.substring(0, file.lastIndexOf('/'));
-          if(imagePathdir != '') {imagePathdir += '/';}
-        imagePathext = path.extname(file);
-        imagePathbasename = path.basename(file, imagePathext);
-        imagePathabs = metalsmith.source() + '/' + file;
-        imagePathdest = metalsmith.destination() + '/' + imagePathdir;
-        imagePathdest += imagePathbasename + options.suffix + imagePathext;
-        console.log(imagePathdest);
+        var imagePath = {};
+        imagePath.src = file;
+        imagePath.dir = file.substring(0, file.lastIndexOf('/'));
+          if(imagePath.dir != '') {imagePath.dir += '/';}
+        imagePath.ext = path.extname(file);
+        imagePath.basename = path.basename(file, imagePath.ext);
+        imagePath.abs = metalsmith.source() + '/' + file;
+        imagePath.dest = metalsmith.destination() + '/' + imagePath.dir;
+        imagePath.dest += imagePath.basename + options.suffix + imagePath.ext;
 
         // dither options
         var palette = options.palette;
         var step = options.step;
 
-        new Jimp.read(imagePathabs, function(err, image) {
-          // atkinsonDither();
+        Jimp.read(imagePath.abs, function(err, image) {
+          // or the atkinsonDither(); function can be used
           var newData = orderedDither(image.bitmap.data, image.bitmap.height,image.bitmap.width, palette, step);
           return new Jimp(image.bitmap.width, image.bitmap.height, function(err, newImage) {
             var i, j, ref;
@@ -55,8 +49,8 @@ function dither(options){
             for (i = j = 0, ref = newData.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
               newImage.bitmap.data[i] = newData[i];
             }
-            newImage.write(imagePathdest);
-            return console.log(file + ' is dithered !');
+            newImage.write(imagePath.dest);
+            return;
           });
         });
 
