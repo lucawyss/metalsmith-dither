@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-dither",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Metalsmith plugin to dither images.",
   "main": "lib/index.js",
   "dependencies": {
@@ -27,9 +27,9 @@
     "dithering",
     "dither",
     "pixel",
-     "plugin",
-    "metalsmith" 
-],
+    "plugin",
+    "metalsmith"
+  ],
   "bugs": {
     "url": "https://github.com/lucawyss/metalsmith-dither/issues"
   },
