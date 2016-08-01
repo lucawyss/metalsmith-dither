@@ -25,7 +25,9 @@ var metalsmith = new Metalsmith(__dirname)
   .use(dither({
     pattern: "**/*.jpg", // using minimatch
     step: 1, // The step for the pixel quantization n = 1,2,3...
-    palette: [[0,0,0],[255,255,255]] // an array of colors as rgb arrays
+    palette: [[0,0,0],[255,255,255]], // an array of colors as rgb arrays
+    suffix: '-dither', // suffix added to the basename of the file dithered
+    algorithm: 'ordered' // dithering algorithm can be 'atkinson'
   }))
 ```
 
