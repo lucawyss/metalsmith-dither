@@ -1,6 +1,6 @@
 ## Todos
 - [ ] cleaning code
-- [ ] improve documentation
+- [x] improve documentation
 - [ ] add to metalsmith plugin list
 - [ ] unit testing
 - [x] add to npm
