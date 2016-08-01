@@ -21,6 +21,15 @@
     "name": "Luca Wyss",
     "url": "https://www.lucawyss.com/"
   },
+  "keywords": [
+    "palette",
+    "color",
+    "dithering",
+    "dither",
+    "pixel",
+     "plugin",
+    "metalsmith" 
+],
   "bugs": {
     "url": "https://github.com/lucawyss/metalsmith-dither/issues"
   },
