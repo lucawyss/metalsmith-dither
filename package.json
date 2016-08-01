@@ -1,0 +1,33 @@
+{
+  "name": "metalsmith-dither",
+  "version": "0.1.0",
+  "description": "Metalsmith plugin to dither images.",
+  "main": "./index.js",
+  "dependencies": {
+    "color-convert": "^0.7.0",
+    "delta-e": "0.0.7",
+    "fs": "0.0.2",
+    "image-dither": "^1.0.1",
+    "jasmine-node": "^1.14.5",
+    "jimp": "^0.2.24",
+    "lodash": "^4.14.1",
+    "metalsmith": "^2.1.0",
+    "minimatch": "^3.0.2",
+    "path": "^0.12.7",
+    "vorpal": "^1.11.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucawyss/metalsmith-dither.git"
+  },
+  "author": {
+    "email": "info@lucawyss.com",
+    "name": "Luca Wyss",
+    "url": "https://www.lucawyss.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lucawyss/metalsmith-dither/issues"
+  },
+  "license": "MIT"
+}
