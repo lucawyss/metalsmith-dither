@@ -15,22 +15,18 @@ var Metalsmith = require('metalsmith');
 var dither = require('metalsmith-dither');
 
 var metalsmith = new Metalsmith(__dirname)
-  .use(dither({
-    pattern: "**/*.png",
-    palette: [[0,0,0],[233,93,16],[22,162,240]],
-    step: 1
-  }))
+  .use(dither())
   .build();
 ```
 
 ## Options
 
 ```javascript
-var defaultOptions = {
+  .use(dither({
     pattern: "**/*.jpg", // using minimatch
     step: 1, // The step for the pixel quantization n = 1,2,3...
     palette: [[0,0,0],[255,255,255]] // an array of colors as rgb arrays
-};
+  }))
 ```
 
 ### Credits
