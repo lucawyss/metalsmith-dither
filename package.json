@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-dither",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Metalsmith plugin to dither images.",
   "main": "lib/index.js",
   "dependencies": {
